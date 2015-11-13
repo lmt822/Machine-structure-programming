@@ -1,0 +1,16 @@
+halt.um
+output1.um
+output2.um
+loadval.um
+divd.um
+add.um
+multi.um
+bNAND.um
+input.um
+map.um
+unmap.um
+codmove.um
+segload1.um
+segload2.um
+segstore.um
+goto.um

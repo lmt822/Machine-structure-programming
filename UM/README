@@ -1,0 +1,80 @@
+/* Mengtian Li
+ * login: mli09
+ * 11/14/2014
+ */
+
+Acknowledges: 
+	Thanks to all TA!s(Magrett, Alex, etc.)
+Disclaimers: 
+	None
+Departures:
+	1. I use a sequences of UArray_Ts to represent memory segments
+	2. I create a new module called instruction to perform each 14 
+	   instructions
+Architecture:
+	I have three modules.
+	The first one is UM, it is the universal machine that interacts with 
+	um codes. It builds(read input umcode), runs and frees the universal 
+	machine. It has registers(UArray_T), memory segments and information 
+	about um instructions. The programs runs by manipulate on instructions
+	and memory segments(which are the other 2 modules)
+	The second one is Memseg, it is representing the memory segments in 
+	the universal machines. It can do multiple basic instructions to the 
+	memory segments. Memory segments are represents as a sequence of UArrays
+	Other information like memory length and lowest free memory segments
+	are protected and can be returned by helper functions.
+	The third one is instructions, it contains 14 instructions specified by
+	the documents. UM will call each instruction base on input um code. And
+	each instruction will call memory segments and registers to perform 
+	instruction.
+Time for 50 million instructions: 
+	7.74s
+	Because it takes 12.397s to run midmark.um, and it's 80 million 
+	instructions. By simple arith, we can deduct 7.74s for 50 million
+	instructions.
+Time for each stages:
+	Analyze: 4 hours
+	Prepare design: 3 hours
+	Solve: 8 hours
+Unit tests:
+	halt.um
+		test halt instruction, if um dores not work, prints error
+	output1.um
+		test only output instruction for registers that hold zeros.
+	output2.um
+		test more output instructions for different registers
+	loadval.um
+		test loadvalue instructions for simple values
+	divd.um
+		test division instructions based on ascii calculation
+	add.um
+		test addition instructions based on ascii calculation	
+	multi.um
+		test multiplication instructions based on ascii calculation
+	bNAND.um
+		test bitwise nand instructions based on ascii calculation
+	input.um
+		test input instructions by input characters and doing ascii
+		calculation and output them
+	map.um
+		test map instruction if it causes any memory errors and check
+		if mapped segments has appropriate index
+	unmap.um
+		test map instruction if it causes any memory errors and check
+		if memory segments has appropriate index
+	codmove.um
+		test conditional move instructions by doing simple control flow
+		to see if a register has been changed or not by output that 
+		register
+	segload1.um
+		test segment load instructions by first store a segment and then
+		load a different segment to it. Then output.
+	segload2.um
+		further test segment load instructions by load segments multiple
+		times and output to see if load successfully
+	segstore.um
+		test segment store instructions by store a piece segment and 
+		output to check
+	goto.um
+		test load program instruction by jumping around within loaded
+		program

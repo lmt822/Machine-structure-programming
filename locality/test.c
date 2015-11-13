@@ -1,0 +1,44 @@
+#include<stdio.h>
+/*
+ * solve how many combination can x,y,z be so that they satisfy x+y+z=203
+ * with x < y < z
+ * x,y,z all positive integer
+ */
+
+int main() {
+	int count = 0;
+	int n = 10000;
+	for (int x=1; x< (n / 3); x++) {
+    		for (int y=x+1; (y<(n-(x+y))); y++) {
+			count++;	
+    		}
+	}
+	printf("%d\n",count);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+int main(){
+    int counter = 0;
+    for (int x = 1; x < 1000; x++){
+	for (int y = x + 1; y < 1000; y++){
+	    for (int z = y + 1; z < 1000; z++){
+		if (x + y + z == 203)
+		    counter ++;
+	    }
+	}
+    }
+    printf("test is %d \n", counter);
+}
+*/

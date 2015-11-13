@@ -1,0 +1,17 @@
+Mengtian Li
+mli09
+11/21/2014
+UM profiling
+-----------------------------------------------------------------------------
+Acknowledgement:
+	All TA that helps especially Kabir and Raewyn
+Disclaimers:
+	The final stage of my UM spends about 40% time on calling Seq_get. This
+	is written by Hanson and I tried several times to write my own 
+	polymorphic Seq_T but run out of time to make it work. Besides this, 
+	Other code are well optimized.
+	Since I already met the performance goal for profiling, I stopped here.
+	If I were given more time, I would fix how to write my own Sequence.
+Time:
+	3 hours to analyze
+	8 hours spent on solving

@@ -1,0 +1,43 @@
+This is the README file for the arith assignment
+by Mingzhe Li (mli04) and Mengtian Li (mli09), 10/15/14
+
+-------------------------------------------------------------------------------
+We would like to acknowledge the help that we have received from Professor
+Noah Mendelsohn, TAs: Ali Tai, Alex Tong, Jacob Gerace, Thomas Colgrove,
+and online instructions from Professor Norman Ramsey.
+
+
+
+-------------------------------------------------------------------------------
+Disclaimer:
+        Everything works well, enjoying a data loss rate <3% at denominator
+        of 255.
+
+        Valgrind reports no memory leak or still reachable.
+
+-------------------------------------------------------------------------------
+Architecture:
+        We pretty much followed our design.
+
+        -compression:
+                This part reads in an image of proper ppm format. The image
+                will be trimmed, if necessary, to even number of rows and 
+                columns of pixels, because otherwise the image would not be
+                able to get divided evenly into 2*2 blocks.  Then the image 
+                is scanned through and mapped into 2*2 blocks. Each block will
+                be packed into a 32-bit codeword.  After the entire image
+                being compressed, the program prints the compressed data to
+                standard output in COMP40 compressed image format.
+
+        -decompression:
+                This part of the program reads in compressed image in COMP40
+                compressed image format.  It unpacks each codeword to a 2*2
+                block of pixels.  After all the codeword being unpacked, a
+                ppm object will hold the decompressed image,  which will be
+                printed out to standard output. 
+
+
+
+-------------------------------------------------------------------------------
+Time for analyzing: 20hrs
+Time for solving: 50hrs+ 
